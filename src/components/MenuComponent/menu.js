@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, TouchableHighlight} from 'react-native';
 
-// import Home from '../HomeComponent/home';
+import Home from '../HomeComponent/home';
+import Logo from '../LogoComponent/logo';
 
 import colors from '../../styles/colors';
 
@@ -55,14 +56,15 @@ class Menu extends Component {
     this.props.changeRoute('home');
   }
   renderContent = (name) => {
-    // if (name === 'home') {
-      // return <Home {...this.props}/>;
-    // }
+    if (name === 'home') {
+      return <Home {...this.props}/>;
+    }
     return <Text>No route</Text>;
   }
   render() {
     return (
       <View style={styles.container}>
+        <Logo/>
         <View style={styles.content}>
           {this.renderContent(this.props.route)}
         </View>
